@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Guess a no btwn 1 to 10</h1>
+    <input type="number" id="userNo" placeholder="Enter number" />
+    <button onclick="checkGuess()">Check Result</button>
+    <h2 id="result"></h2>
+  </body>
+  <script>
+    let x = Math.floor(Math.random() * 10) + 1;
+    function checkGuess() {
+      let userNo = document.getElementById("userNo").value;
+      if (userNo == x) {
+        document.getElementById("result").innerHTML = "You guessed it right";
+      } else {
+        document.getElementById("result").innerHTML = "You guessed it wrong";
+      }
+    }
+  </script>
+</html>
