@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Form Validation</h2>
+    <input type="text" id="name" placeholder="Enter name" />
+    <input type="email" id="email" placeholder="Enter email" />
+    <input type="text" id="phone" placeholder="Enter phone number" />
+    <textarea id="message" placeholder="Enter message"></textarea>
+    <button onclick="validateForm()">Submit</button>
+    <div id="formData"></div>
+  </body>
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let phone = document.getElementById("phone").value;
+      let message = document.getElementById("message").value;
+
+      if (name && email.includes("@") && phone.length >= 10 && message) {
+        document.getElementById("formData").innerHTML = `
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Phone:</strong> ${phone}</p>
+                    <p><strong>Message:</strong> ${message}</p>`;
+      } else {
+        alert("Please enter valid details!");
+      }
+    }
+  </script>
+</html>
